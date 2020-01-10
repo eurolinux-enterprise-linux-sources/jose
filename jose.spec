@@ -1,5 +1,5 @@
 Name:           jose
-Version:        8
+Version:        10
 Release:        1%{?dist}
 Summary:        Tools for JSON Object Signing and Encryption (JOSE)
 
@@ -79,6 +79,11 @@ make %{?_smp_mflags} check
 %{_mandir}/man3/jose*.3*
 
 %changelog
+* Fri Sep 29 2017 Nathaniel McCallum <npmccallum@redhat.com> - 10-1
+- New upstream release
+- Resolves: #1466278
+- Resolves: #1473248
+
 * Wed Jun 14 2017 Nathaniel McCallum <npmccallum@redhat.com> - 8-1
 - New upstream release
 

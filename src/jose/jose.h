@@ -40,4 +40,4 @@
 #include <jose/jwk.h>
 #include <jose/jws.h>
 
-#define JOSE_VERSION 8
+#define JOSE_VERSION 10

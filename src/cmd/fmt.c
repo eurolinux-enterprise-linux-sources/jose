@@ -26,6 +26,10 @@
 #define SUMMARY "Converts JSON between serialization formats"
 #define JAIN json_array_insert_new
 
+#ifdef __MINGW32__
+#define sscanf __mingw_sscanf
+#endif
+
 static const char *prefix = "jose fmt [OPTIONS]\n\n" SUMMARY;
 
 typedef struct {
@@ -79,7 +83,7 @@ cmd_output(const json_t *arg, json_t *stk, json_t *cur, json_t *lst)
     ret = true;
 
 egress:
-    if (strcmp(s, "-") == 0)
+    if (strcmp(s, "-") != 0)
         fclose(file);
     return ret;
 }
@@ -126,7 +130,7 @@ cmd_foreach(const json_t *arg, json_t *stk, json_t *cur, json_t *lst)
     ret = true;
 
 egress:
-    if (strcmp(s, "-") == 0)
+    if (strcmp(s, "-") != 0)
         fclose(file);
     return ret;
 }
